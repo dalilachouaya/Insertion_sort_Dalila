@@ -1,0 +1,29 @@
+/*Algorithm*/
+
+
+
+PROCEDURE Insertion_sort(arr : ARRAY_OF integer[10])
+VAR
+        i,j,current: INTEGER ;
+BEGIN
+        FOR i FROM 1 TO arr.length STEP 1  DO
+                current := arr[i];
+                j := i-1;
+                WHILE (j>= 0 && arr[j] > current) DO
+                        arr[j+1] := arr[j];
+                        j:=j-1;
+                END_WHILE
+                arr[j+1] := current ;
+        END_FOR  
+END
+
+ALGORITHM Insert_sort
+VAR
+        i,j,current: INTEGER ;
+        Ar : ARRAY_OF integer[10];
+BEGIN
+        Ar := { 7 , 6, 5, 3, 8, 9, 2, 1, 4 }
+        Insertion_sort(Ar);
+        STRING x := Ar.ToString ();
+        Write('x');
+END
